@@ -15,5 +15,5 @@ cd /usr/share/nginx/html &>>/tmp/expense.log
 unzip /tmp/frontend.zip &>>/tmp/expense.log
 
 echo -e "\e[36m Starting Nginx service \e[0m"
-systemctl enable nginx &>>/tem/expense.log
+systemctl enable nginx &>>/tmp/expense.log
 systemctl restart nginx &>>/tmp/expense.log
