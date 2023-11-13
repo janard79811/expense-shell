@@ -1,5 +1,6 @@
 log_file=/tmp/expense.log
 color="\e[33m"
+MYSQL_ROOT_PASSWORD=$1
 
 echo -e "${color} disable nodejs default version \e[0m"
 dnf module disable nodejs -y &>>${log_file}
@@ -96,7 +97,7 @@ else
 fi
 
 echo -e "${color} load schema \e[0m"
-mysql -h mysql-dev.janard4589.online -uroot -pExpenseApp@1 < /app/schema/backend.sql &>>${log_file}
+mysql -h mysql-dev.janard4589.online -uroot -p${MYSQL_ROOT_PASSWORD} < /app/schema/backend.sql &>>${log_file}
 if [ $? -eq 0 ]; then
  echo -e "\e[32m SUCCESS \e[0m"
 else
