@@ -1,7 +1,6 @@
 log_file=/tmp/expense.log
 color="\e[33m"
-
-MYSQL_ROOT_PASSWORD=$1
+$1=MYSQL_ROOT_PASSWORD
 
 if [ -z $1 ]; then
   echo password is missing
