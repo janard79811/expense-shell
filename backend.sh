@@ -1,11 +1,12 @@
 log_file=/tmp/expense.log
 color="\e[33m"
-MYSQL_ROOT_PASSWORD=$1
 
 if [ -z $1 ]; then
   echo password is missing
   exit
 fi
+
+MYSQL_ROOT_PASSWORD=$1
 
 echo -e "${color} disable nodejs default version \e[0m"
 dnf module disable nodejs -y &>>${log_file}
