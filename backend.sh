@@ -44,12 +44,14 @@ if [ $? -ne 0 ]; then
   fi
 fi
 
-echo -e "${color} create application directory \e[0m"
-mkdir /app &>>${log_file}
-if [ $? -eq 0 ]; then
- echo -e "\e[32m SUCCESS \e[0m"
-else
- echo -e "\e[31m FAILURE \e[0m"
+if [ -d /app ]; then
+ echo -e "${color} create application directory \e[0m"
+ mkdir /app &>>${log_file}
+ if [ $? -eq 0 ]; then
+  echo -e "\e[32m SUCCESS \e[0m"
+ else
+  echo -e "\e[31m FAILURE \e[0m"
+ fi
 fi
 
 echo -e "${color} removing/cleaning/ deleting default/old application content \e[0m"
