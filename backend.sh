@@ -1,14 +1,6 @@
-log_file=/tmp/expense.log
-color="\e[33m"
-MYSQL_ROOT_PASSWORD=$1
+source common.sh
 
-status_check() {
-  if [ $? -eq 0 ]; then
-   echo -e "\e[32m SUCCESS \e[0m"
-  else
-   echo -e "\e[31m FAILURE \e[0m"
-  fi
-}
+MYSQL_ROOT_PASSWORD=$1
 
 if [ -z "$1" ]; then
   echo password is missing
